@@ -1,0 +1,22 @@
+nav {
+    background: #222222;
+    padding: 10px 16px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h1 {
+        flex: 1;
+    }
+
+    .rates {
+        flex: 2;
+        display: flex;
+        justify-content: space-around;
+
+        .rate {
+            font-weight: 400;
+        }
+    }
+}

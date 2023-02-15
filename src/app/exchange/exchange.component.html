@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="form-wrapper">
+        <div class="form">
+            <input (input)="exchange($event)"
+                   [(ngModel)]="currencyFrom.value"
+                   min="0"
+                   name="from"
+                   step="0.01"
+                   type="number"
+            />
+            <select (change)="exchange($event)"
+                    [(ngModel)]="currencyFrom.code"
+                    name="from"
+            >
+                <ng-container *ngFor="let currency of getCurrencies(); trackBy: identify">
+                    <option [value]="currency">{{ currency }}</option>
+                </ng-container>
+            </select>
+        </div>
+
+        <div class="form">
+            <input (input)="exchange($event)"
+                   [(ngModel)]="currencyTo.value"
+                   min="0"
+                   name="to"
+                   step="0.01"
+                   type="number"
+            />
+            <select (change)="exchange($event)"
+                    [(ngModel)]="currencyTo.code"
+                    name="to"
+            >
+                <ng-container *ngFor="let currency of getCurrencies(); trackBy: identify">
+                    <option [value]="currency">{{ currency }}</option>
+                </ng-container>
+            </select>
+        </div>
+    </div>
+</div>
